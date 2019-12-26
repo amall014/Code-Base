@@ -11,6 +11,7 @@ console.log(__dirname)
 //Required for express config
 const express= require('express')
 const app = express()
+const port = Process.env.PORT || 3000
 app.use(express.static(path.join(__filename,'../Templates/views')))//contents are static and dont change
 const Viewspath= (path.join(__filename,'../Templates/views'))//Dynamically assigning view path in Line # 23
 const PartialViewspath= (path.join(__filename,'../Templates/partials'))//Dynamically assigning view path in Line # 23
@@ -123,14 +124,14 @@ app.get('*',(req,res)=>{//provides the route to match
 //     res.send('404 Internal Page Not Found')
 // })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
 
     console.log('I am listenning')
 })
 
-const weatherForm = document.querySelector('form')
-weatherForm.addEventListener('submit',()=>{
-    console.log('On Submit Clicked')
+// const weatherForm = document.querySelector('form')
+// weatherForm.addEventListener('submit',()=>{
+//     console.log('On Submit Clicked')
 
 
-})
+//})
